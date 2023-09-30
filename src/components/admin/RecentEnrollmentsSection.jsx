@@ -18,7 +18,7 @@ export const RecentEnrollmentsSection = () => {
       const resp = await axios.get("/api/enrollment/recent", {
         headers: { Authorization: `Bearer ${token}` },
       });
-      // console.log(resp.data.recentEnrollments);
+      console.log(resp.data.recentEnrollments);
       setRecentEnrollments(resp.data.recentEnrollments);
     } catch (error) {
       if (error.response) {
@@ -56,7 +56,7 @@ export const RecentEnrollmentsSection = () => {
             </Text>
             <Text color="dimmed" ml="auto">
               {" "}
-              {computeDate(enroll.createdAt)}
+              {computeDate(enroll.createdAt)}{" "}
             </Text>
           </Group>
         ))}
